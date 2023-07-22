@@ -20,3 +20,7 @@ body {
 .network {
   width: 2.5rem;
 }
+
+main{
+  min-height: 25vh;
+}

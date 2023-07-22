@@ -5,8 +5,9 @@ const options = {
     return {
       eventos: [],
       categorias: [],
-      valorSearch: "",
-      categoriaSeleccionada: [],
+      categoriaElegida: [],
+      valorBusqueda: "",
+      categoriasFiltradas:[],
     };
   },
   created() {
@@ -14,6 +15,7 @@ const options = {
       .then((respuesta) => respuesta.json())
       .then((data) => {
         this.eventos = data.events;
+        this.categoriasFiltradas = data.events
         let categoriasRepetidas = this.eventos.map((evento) => evento.category);
         this.categorias = Array.from(new Set(categoriasRepetidas));
       })
@@ -21,15 +23,15 @@ const options = {
   },
   methods: {
     filtrar() {
-      this.categorias.filter((categoria) => {
-         return categoria.name
-          .toLowerCase()
-          .startsWith(this.valorSearch.toLowerCase()) &&
-          (this.categoriaSeleccionada.includes(categoria.category) ||
-            this.categoriaSeleccionada.length == 0);
+       this.categoriasFiltradas = this.eventos.filter((evento) => {
+        return (
+          evento.name
+            .toLowerCase()
+            .startsWith(this.valorBusqueda.toLowerCase()) &&
+          (this.categoriaElegida.includes(evento.category) ||
+            this.categoriaElegida.length == 0)
+        );
       });
-      console.log(this.valorSearch);
-      console.log(this.categoriaSeleccionada);
     },
   },
 };
