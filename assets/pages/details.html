@@ -15,18 +15,38 @@
 
     <!--📌Cards-Eventos-->
     <div id="app">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="../images/amazing_brand.png" alt="logo" class="img-logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav d-flex justify-content-end w-100">
+                  <a class="nav-link" aria-current="page" href="../../index.html">HOME</a>
+                  <a class="nav-link" href="./pastEvents.html">PAST EVENTS</a>
+                  <a class="nav-link" href="./upcomingEvents.html">UPCOMING EVENTS</a>
+                  <a class="nav-link" href="./contact.html">CONTACT</a>
+                  <a class="nav-link" href="./stats.html">STATS</a>
+                </div>
+              </div>
+            </div>
+          </nav>
         <main>
-            <div class=" container-fluid  mt-5 row m-0 justify-content-evenly gap-4">
+            <div class=" container-fluid mt-5 row m-0 justify-content-evenly gap-4">
                 <template v-if="eventoElegido">
-                    <article class="card col-5 p-0" style="width: 18rem;">
+                    <article class="card col-5 p-0 " style="width: 18rem;">
                         <img v-bind:src="eventoElegido.image" class="card-img-top" alt="food_fair">
                         <div class="card-body">
                             <h5 class="card-title">{{eventoElegido.name}}</h5>
-                            <p class="card-text">{{eventoElegido.description}}
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h6>{{eventoElegido.price}}USD</h6>
-                            </div>
+                            <p class="card-text">Category: {{eventoElegido.category}}</p>
+                            <p class="card-text">Date: {{eventoElegido.date}}</p>
+                            <p class="card-text"> Description: {{eventoElegido.description}}</p>
+                            <p class="card-text">Place: {{eventoElegido.place}}</p>
+                            <p class="card-text">Price: {{eventoElegido.price}}</p>
+                            <p class="card-text">Capacity: {{eventoElegido.capacity}}</p>
+                            <p class="card-text">Assistance: {{eventoElegido.assistance}}</p>
                         </div>
                     </article>
                 </template>
