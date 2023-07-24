@@ -24,3 +24,6 @@ body {
 main{
   min-height: 25vh;
 }
+.card-img-top{
+  height: 12rem;
+}

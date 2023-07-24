@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Amazing Events | Details</title>
+</head>
+
+<body>
+
+    <!--📌Cards-Eventos-->
+    <div id="app">
+        <main>
+            <div class=" container-fluid  mt-5 row m-0 justify-content-evenly gap-4">
+                <template v-if="eventoElegido">
+                    <article class="card col-5 p-0" style="width: 18rem;">
+                        <img v-bind:src="eventoElegido.image" class="card-img-top" alt="food_fair">
+                        <div class="card-body">
+                            <h5 class="card-title">{{eventoElegido.name}}</h5>
+                            <p class="card-text">{{eventoElegido.description}}
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6>{{eventoElegido.price}}USD</h6>
+                            </div>
+                        </div>
+                    </article>
+                </template>
+            </div>
+        </main>
+    </div>
+
+    <!--📌Footer-->
+    <footer class="d-flex justify-content-between align-items-center border-top border-2 border-danger mx-3 mt-4">
+        <div id="network" class="m-2">
+            <a class="me-2" href=" https://es-la.facebook.com/"><img class="rounded-2 network"
+                    src="../images/facebook.png" alt="facebook" title="Facebook"></a>
+            <a href="https://web.whatsapp.com/"><img class="rounded-2 network" src="../images/whatsapp.png"
+                    alt="whatsapp" title="WhatsApp"></a>
+        </div>
+        <h5 class="text-danger fst-italic">COHORT - 49</h5>
+    </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../scripts/details.js"></script>
+</body>
+
+</html>
