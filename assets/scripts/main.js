@@ -7,7 +7,7 @@ const options = {
       categorias: [],
       categoriaElegida: [],
       valorBusqueda: "",
-      categoriasFiltradas:[],
+      categoriasFiltradas: [],
     };
   },
   created() {
@@ -15,7 +15,7 @@ const options = {
       .then((respuesta) => respuesta.json())
       .then((data) => {
         this.eventos = data.events;
-        this.categoriasFiltradas = data.events
+        this.categoriasFiltradas = data.events;
         let categoriasRepetidas = this.eventos.map((evento) => evento.category);
         this.categorias = Array.from(new Set(categoriasRepetidas));
       })
@@ -23,7 +23,7 @@ const options = {
   },
   methods: {
     filtrar() {
-       this.categoriasFiltradas = this.eventos.filter((evento) => {
+      this.categoriasFiltradas = this.eventos.filter((evento) => {
         return (
           evento.name
             .toLowerCase()
